@@ -1,10 +1,9 @@
 # Memory Information Provider
 
-- Application that manages same or differnet kinds of resources among the clients
-- The clients are simulated by seperate threads
-- If the `avoid-flag` is set to 1, deadlock avoidance is applied to manage the resources
-- If the `avoid-flag` is set to 0, deadlock detection is applied and the occuring deadlocks can be seen
-- Banker's Algorithm is used as deadlock avoidance algorithm
+- Application that provides memory information (physical and virtual) about different processes such as, memory mappings, frame information, page frame number and more
+- `<PFN>` stands for Page Frame Number
+- `<PID>` stands for Process ID
+- `<VA>` stands for Virtual Address
 - The application is developed on Linux operating system using C programming language
 
 ## Contents
@@ -32,7 +31,6 @@ $ make
 
 ##### Running the program with options
 
--
 ```
 $ ./pvm -frameinfo <PFN>
 ```
@@ -65,9 +63,44 @@ $ ./pvm -mapallin <PID>
 $ ./pvm -alltablesize <PID>
 ```
 
-##### Example proctopk run
+##### Example runs for the program with options
 
 ```
 $ make
-$ ./myapp 1
+$ ./pvm -frameinfo 10
+```
+
+```
+$ make
+$ ./pvm -memused 1
+```
+
+```
+$ make
+$ ./pvm -mapva 3 0x000009
+```
+
+```
+$ make
+$ ./pvm -pte 3 9
+```
+
+```
+$ make
+$ ./pvm -maprange 3 0x000009 100
+```
+
+```
+$ make
+$ ./pvm -mapall 5
+```
+
+```
+$ make
+$ ./pvm -mapallin 1
+```
+
+```
+$ make
+$ ./pvm -alltablesize 17
 ```
