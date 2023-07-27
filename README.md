@@ -4,6 +4,7 @@
 - `<PFN>` stands for Page Frame Number
 - `<PID>` stands for Process ID
 - `<VA>` stands for Virtual Address
+- All the addresses can be provided both in decimal and hexadecimal format
 - The application is developed on Linux operating system using C programming language
 
 ## Contents
